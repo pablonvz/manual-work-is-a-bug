@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Enable mozilla headless mode
+# https://intoli.com/blog/running-selenium-with-headless-firefox/
+# export MOZ_HEADLESS='1'
+
+while true; do
+    OUTPUT=$(inotifywait --quiet --recursive --event modify --exclude '\.swp' .)
+    clear
+    echo `date`
+    echo $OUTPUT
+    $@
+done
+
