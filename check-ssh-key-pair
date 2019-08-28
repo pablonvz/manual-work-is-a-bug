@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# source: https://serverfault.com/a/426429
+
+if [ $# -eq 0 ]; then
+    echo "Checks the ssh key pair by comparing their public keys line by line"
+    echo "Usage: $0 <ssh-key-file> <ssh-key-file.pub>"
+    exit 1
+fi
+
+differences=`diff <(ssh-keygen -ef $1) <(ssh-keygen -ef $2)`
+
+if [ -z "$differences" ]; then
+    echo 'OK: The keys match'
+else
+    echo 'NOT OK: The keys do not match'
+fi
+
