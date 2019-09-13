@@ -1,5 +1,5 @@
 #!/bin/bash
 
-alias vim='vim -C'
+alias vim='nvim'
 alias ls='ls -G'
 

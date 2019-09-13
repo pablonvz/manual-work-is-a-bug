@@ -12,4 +12,5 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vund
 # configure Vundle
 ln -vs `realpath neovim.init.vim` ~/.config/nvim/init.vim
 
+echo "alias vim='nvim' # added on $(date)" >> ~/.bash_profile
 
