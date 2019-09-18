@@ -12,7 +12,7 @@ fi
 $@
 
 while true; do
-    OUTPUT=$(inotifywait --quiet --recursive --event modify --exclude '[\.swp|\.git]' .)
+    OUTPUT=$(inotifywait --quiet --recursive --event modify --exclude '(\.swp|\.git)' .)
     clear
     echo `date`
     echo $OUTPUT
